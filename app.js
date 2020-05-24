@@ -2,21 +2,25 @@
 (function () {
     'use strict';
     
-    angular.module('MsgApp', [])
-    .controller('MsgController', MsgController);
+    angular.module('LunchCheck', [])
+    .controller('LunchCheckController', LunchCheckController);
     
-    MsgController.$inject = ['$scope'];
-    function MsgController($scope) {
-      $scope.name = "Yaakov";
-      $scope.stateOfBeing = "hungry";
-    
-      $scope.sayMessage = function () {
-        return "Yaakov likes to eat healthy snacks at night!";
-      };
-    
-      $scope.feedYaakov = function () {
-        $scope.stateOfBeing = "fed";
-      };
+    LunchCheckController.$inject = ['$scope'];
+    function LunchCheckController($scope) {
+      $scope.item = "";
+      $scope.mess = "";
+ 
+      $scope.splitList = function(){
+
+        var res = $scope.item.split(",");
+
+        if($scope.item=="")
+            $scope.mess="Please enter data first";
+        else if(res.length <= 3)
+            $scope.mess="Enjoy!";
+        else if(res.length > 3)
+            $scope.mess="Too much!";
+      }
+      
     }
-    
     })();

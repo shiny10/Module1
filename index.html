@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html ng-app='MsgApp'>
+<html ng-app='LunchCheck'>
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style> body { font-size: 1.2em; }</style>
-    <title>Expressions and Interpolation</title>
+    <style> body { font-size: 1.4em; }</style>
+    <title>Lunch Menu</title>
   </head>
   <body>
-    <h1>Expressions and Interpolation</h1>
-    <div ng-controller='MsgController'>
-      {{name}} has a message for you: <br>
-      {{sayMessage()}}
-      <div>
-        <button ng-click="feedYaakov()">Feed Yaakov</button>
-      </div>
+    <h1>LUNCH MENU!!!!!!</h1>
+    <div ng-controller='LunchCheckController'>
+        Enter the items for lunch as comma-separated items ( Note : An empty item , , is also considered as an item)
+        <br>
+        <br>
+        <input type="text" ng-model="item" style="width:400px ;height:30px;">
+        <button ng-click="splitList()" style="height:35px">Check If Too Much</button>
+        <br>
+        <br>
+      {{mess}} 
     </div>
   </body>
 </html>
